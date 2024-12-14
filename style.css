@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    color: #333;
+    font-size: 16px;
+}
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    position: relative; 
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-container nav ul {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    margin: 0;
+}
+
+.nav-container nav ul li {
+    margin: 0 15px;
+}
+
+.nav-container nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .nav-container nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #333;
+        padding: 10px;
+        border-radius: 5px;
+        width: 150px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-container nav ul li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: flex; 
+    }
+
+    .nav-container nav ul.active {
+        display: flex;
+    }
+}
+#home {
+    background: url('hero-background.jpg') no-repeat center center/cover;
+    height: 40vh;
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f0c0d3;
+    animation: textGlow 2s infinite;
+}
+
+#home h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    overflow: hidden; 
+    white-space: nowrap;
+    border-right: 2px solid black;
+    animation: typewriter 4s steps(15) 1s 1 normal both, blink 0.7s step-end infinite;
+}
+
+#home p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typewriter 6s steps(30) 2s 1 normal both, blink 0.6s step-end infinite;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    from {
+        border-color: black;
+    }
+    to {
+        border-color: transparent;
+    }
+}
+
+
+
+button {
+    padding: 10px 50px;
+    background-color: #f50057;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+button:hover {
+    background-color: #ff3366;
+}
+
+
+
+@media (max-width: 430px) {
+    #home {
+        height: 50vh;
+        padding: 10px;
+    }
+
+    #home h1 {
+        font-size: 2rem; 
+        border-right: 1px solid black; 
+    }
+
+    #home p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+
+    button {
+        padding: 10px 30px; 
+        font-size: 1rem;
+    }
+}
+
+#about {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+#about p{
+    font-size: 1.2rem;
+}
+
+#projects {
+    padding: 50px 20px;
+    background-color: #f0c0d3;
+    text-align: center;
+}
+
+#projects h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.project-card h3 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #f50057;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+#contact {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contact-container h2{
+    font-size: 2rem;
+}
+#contact input,
+#contact textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#contact button {
+    padding: 10px 20px;
+    background-color: #f50057;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+#contact button:hover {
+    background-color: #ff3366;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
